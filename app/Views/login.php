@@ -3,12 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" contnt="width=device-width" , initial-scale="1.0">
     <title>Connexion - Tom Troc</title>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="header-logo">
+                <a href="index.php">
+                    <img src="public/images/logo.png" alt="Tom Troc Logo" class="logo-img">
+                </a>
+            </div>
+
+            <div class="header-nav-links">
+                <a href="#">Accueil</a>
+                <a href="#">Nos livres à l'échange</a>
+            </div>
+
+            <div class="header-user-links">
+                <a href="#">Messagerie</a>
+                <a href="#">Mon compte</a>
+                <a href="#">Connexion</a>
+            </div>
+        </nav>
+    </header>
     <main class="auth-container">
 
         <div class="auth-form-side">
@@ -32,10 +51,25 @@
                 <button type="submit" class="btn-primary">Se connecter</button>
             </form>
 
-            <div class="auth-image-side">
-                <img src="public/images/auth-background.jpg" alt="Bibliothèque Tom Troc">
-            </div>
+            <p class="auth-link">
+                Pas de compte ? <a href="index.php?action=register">Inscrivez-vous</a>
+            </p>
+        </div>
+
+        <div class="auth-image-side">
+            <img src="public/images/auth-background.jpg" alt="Bibliothèque Tom Troc">
+        </div>
 
     </main>
+    <footer>
+        <div class="footer-container">
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Tom Troc©</a>
+            <img src="public/images/mini-logo.png" alt="logo" class="footer-mini-logo">
+        </div>
+    </footer>
+
+</body>
 
 </html>
