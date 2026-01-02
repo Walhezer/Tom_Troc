@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Tom Troc</title>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
@@ -31,29 +32,33 @@
     <main class="auth-container">
 
         <div class="auth-form-side">
-            <h1>Connexion</h1>
 
-            <?php if (isset($error)): ?>
-                <p style="color: red;"><?= $error ?></p>
-            <?php endif; ?>
+            <div class="auth-wrapper">
 
-            <form action="index.php?action=login" method="post">
-                <div class="form-group">
-                    <label for="email">Adresse email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                <h1>Connexion</h1>
 
-                <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
+                <?php if (isset($error)): ?>
+                    <p style="color: red;"><?= $error ?></p>
+                <?php endif; ?>
 
-                <button type="submit" class="btn-primary">Se connecter</button>
-            </form>
+                <form action="index.php?action=login" method="post">
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-            <p class="auth-link">
-                Pas de compte ? <a href="index.php?action=register">Inscrivez-vous</a>
-            </p>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Se connecter</button>
+                </form>
+
+                <p class="auth-link">
+                    Pas de compte ? <a href="index.php?action=register">Inscrivez-vous</a>
+                </p>
+            </div>
         </div>
 
         <div class="auth-image-side">
