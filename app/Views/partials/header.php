@@ -11,18 +11,21 @@
 <body>
     <header>
         <nav>
-            <div class="header-logo">
-                <a href="index.php">
-                    <img src="public/images/logo.png" alt="Tom Troc Logo" class="logo-img">
-                </a>
+            <div class="header-left-side">
+
+                <div class="header-logo">
+                    <a href="index.php">
+                        <img src="public/images/logo.png" alt="Tom Troc Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <div class="header-nav-links">
+                    <a href="index.php">Accueil</a>
+                    <a href="index.php?action=books">Nos livres à l'échange</a>
+                </div>
             </div>
 
-            <div class="header-nav-links">
-                <a href="index.php">Accueil</a>
-                <a href="index.php?action=books">Nos livres à l'échange</a>
-            </div>
-
-            <div class="header-user-links">
+            <div class="header-right-side">
                 <a href="index.php?action=messages">Messagerie</a>
                 <a href="index.php?action=account">Mon compte</a>
                 <a href="index.php?action=login">Connexion</a>

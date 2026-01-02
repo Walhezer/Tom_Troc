@@ -38,13 +38,29 @@ header nav {
 header nav a {
     text-decoration: none;
     color: #333;
-    margin-left: 25px;
     font-size: 0.95rem;
     font-weight: 500;
 }
 
 header nav a.active {
     font-weight: 700;
+}
+
+.header-left-side {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.header-nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.header-right-side {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .header-logo img {
@@ -60,21 +76,21 @@ footer {
     text-align: right;
 }
 
-.auth-container {
-    flex: 1; 
-    display: flex; 
-    width: 100%;
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
 }
 .footer-container a {
     text-decoration: none;
     color: #666;
-    margin-left: 20px;
     font-size: 0.85rem;
 }
 
 .footer-mini-logo {
     vertical-align: middle;
-    margin-left: 10px;
     height: 15px;
     width: auto;
 }
@@ -112,6 +128,7 @@ footer {
     min-height: calc(100vh - 150px);
     align-items: stretch;
     width: 100%;
+    flex: 1;
     max-width: 100%; 
     text-align: left; 
 }
