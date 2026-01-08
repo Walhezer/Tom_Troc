@@ -7,9 +7,7 @@ require_once 'partials/header.php';
     <div class="auth-form-side">
         <h1>Connexion</h1>
 
-        <?php if (isset($error)): ?>
-            <p style="color: red;"><?= $error ?></p>
-        <?php endif; ?>
+
 
         <form action="index.php?action=login" method="post">
             <div class="form-group">
@@ -21,7 +19,9 @@ require_once 'partials/header.php';
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
             </div>
-
+            <?php if (isset($error)): ?>
+                <p style="color: red;"><?= $error ?></p>
+            <?php endif; ?>
             <button type="submit" class="btn-primary">Se connecter</button>
         </form>
 

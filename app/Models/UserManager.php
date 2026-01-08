@@ -25,7 +25,7 @@ class UserManager
     //Function to create a new user
     public function createUser($username, $email, $password)
     {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $query = "INSERT INTO users (username, email, password, created_at) 
                   VALUES (:username, :email, :password, NOW())";
         $stmt = $this->conn->prepare($query);

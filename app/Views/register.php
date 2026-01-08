@@ -9,17 +9,17 @@ require_once 'partials/header.php';
         <form action="index.php?action=register" method="post">
             <div class="form-group">
                 <label for="username">Pseudo</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username">
             </div>
 
             <div class="form-group">
                 <label for="email">Adresse email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email">
             </div>
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
             </div>
 
             <button type="submit" class="btn-primary">S'inscrire</button>
