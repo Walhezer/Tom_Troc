@@ -38,14 +38,47 @@ require_once "partials/header.php";
             commencer :</p>
 
         <div class="steps-container">
-            <div class="step-card">Inscrivez-vous gratuitement sur notre plateforme.</div>
-            <div class="step-card">Ajoutez les livres que vous souhaitez échanger à votre profil.</div>
-            <div class="step-card">Parcourez les livres disponibles chez d'autres membres.</div>
-            <div class="step-card">Proposez un échange et discutez avec d'autres passionnés de lecture.</div>
+            <div class="step-card">
+                <p> Inscrivez-vous gratuitement sur notre plateforme.</p>
+            </div>
+            <div class="step-card">
+                <p>Ajoutez les livres que vous souhaitez échanger à votre profil.</p>
+            </div>
+            <div class="step-card">
+                <p>Parcourez les livres disponibles chez d'autres membres.</p>
+            </div>
+            <div class="step-card">
+                <p>Proposez un échange et discutez avec d'autres passionnés de lecture.</p>
+            </div>
         </div>
 
         <a href="index.php?action=catalog" class="btn-outline">Voir tous les livres</a>
-
-
     </section>
+
+    <div class="img-mask">
+        <img src="public/images/Mask-group.jpg">
+    </div>
+    <section class="our-values">
+        <div class="values-content">
+            <h2 class="section-title">Nos valeurs</h2>
+
+            <p>Chez Tom Troc, nous mettons l'accent sur le partage, la découverte et la communauté. Nos valeurs sont
+                ancrées dans notre passion pour les livres et notre désir de créer des liens entre les lecteurs. Nous
+                croyons en la puissance des histoires pour rassembler les gens et inspirer des conversations
+                enrichissantes.</p>
+
+            <p>Notre association a été fondée avec une conviction profonde : chaque livre mérite d'être lu et partagé.
+            </p>
+
+            <p>Nous sommes passionnés par la création d'une plateforme conviviale qui permet aux lecteurs de se
+                connecter, de partager leurs découvertes littéraires et d'échanger des livres qui attendent patiemment
+                sur les étagères.</p>
+
+            <div class="signature-block">
+                <cite>L'équipe Tom Troc</cite>
+                <img src="public/images/Vector.svg" alt="Coeur">
+            </div>
+        </div>
+    </section>
+    <?php require_once 'partials/footer.php'; ?>
 </main>
