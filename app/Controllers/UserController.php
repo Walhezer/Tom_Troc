@@ -15,7 +15,7 @@ class UserController
             $userManager = new UserManager();
 
             if ($userManager->createUser($username, $email, $password)) {
-                header('Location: index.php?action=login');
+                header('Location: index.php?action=login&success=1');
                 exit();
             } else {
                 exit();

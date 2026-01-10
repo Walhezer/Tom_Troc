@@ -21,7 +21,9 @@ require_once 'partials/header.php';
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password">
             </div>
-
+            <?php if (isset($error)): ?>
+                <p class="error-message"><?= $error ?></p>
+            <?php endif; ?>
             <button type="submit" class="btn-primary">S'inscrire</button>
 
             <p class="auth-link">
