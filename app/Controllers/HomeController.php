@@ -1,12 +1,13 @@
-<?php 
+<?php
 
-    class HomeController 
+class HomeController
+{
+    public function home()
     {
-    public function home() {
-    $bookManager = new BookManager();
-    $book = $bookManager -> getBook(); 
+        $bookManager = new BookManager();
+        $book = $bookManager->getBook();
 
-    require ('app/views/home.php');
+        require('app/Views/home.php');
     }
 }
 

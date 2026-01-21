@@ -21,7 +21,7 @@
 
                 <div class="header-nav-links">
                     <a href="index.php">Accueil</a>
-                    <a href="index.php?action=books">Nos livres à l'échange</a>
+                    <a href="index.php?action=catalog">Nos livres à l'échange</a>
                 </div>
             </div>
 
