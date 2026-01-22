@@ -250,30 +250,24 @@ input:focus {
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 40px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
 }
 
 .book-card {
     background-color: #fff;
+    width: 200px;
     border-radius: 0 0 20px 20px;
+    text-align: left;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     border: none;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3 ease;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .book-card img {
@@ -281,41 +275,20 @@ input:focus {
     height: 200px;
     object-fit: cover;
     display: block;
-    border-radius: 0;
-}
-
-.book-infos {
-    height: 124px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
 }
 
 .book-card h3 {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 700;
     color: #000;
-    margin-bottom: 0 0 5px 0;
+    margin-bottom: 5px;
     line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .book-card p {
     font-family: 'Inter', sans-serif;
-    color: #999;
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin: 0;
-}
-
-.book-owner {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
+    font-size: 12px;
     color: #b0b0b0;
     font-style: italic;
     margin: 0;
@@ -328,7 +301,56 @@ input:focus {
     height: 100%;
 }
 
+.book-infos {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-height: 100px;
+}
 
+.book-infos h3 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 1.2;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-infos p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 13px;
+    color: #999;
+    margin: 0;
+}
+
+.book-infos .book-owner {
+    font-size: 11px;
+    font-style: italic;
+    color: #999;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.book-owner {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #b0b0b0;
+    font-style: italic;
+    margin: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .block-btn {
     text-align: center;

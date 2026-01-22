@@ -39,4 +39,13 @@ class UserManager
         }
         return false;
     }
+    // Function to retrieve a user by their ID
+    public function getUserById($id)
+    {
+        $sql = "SELECT * FROM users WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

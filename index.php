@@ -39,6 +39,11 @@ switch ($action) {
                 $controller->showbook();
                 break;
 
+        case 'account':
+                $controller = new UserController();
+                $controller->account();
+                break;
+
         default:
                 echo "<h1>Error 404: Page not found</h1>";
                 break;
