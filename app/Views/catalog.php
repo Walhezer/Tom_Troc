@@ -15,8 +15,10 @@ require_once 'partials/header.php';
                     <?php foreach ($books as $book): ?>
                         <article class="book-card">
                             <div class="book-image-container">
-                                <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>"
-                                    alt="Couverture de <?= htmlspecialchars($book['title']) ?>">
+                                <a href="index.php?action=show_book&id=<?= $book['id'] ?>">
+                                    <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>"
+                                        alt="Couverture de <?= htmlspecialchars($book['title']) ?>">
+                                </a>
                             </div>
 
                             <div class="book-info">

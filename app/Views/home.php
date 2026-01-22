@@ -16,14 +16,22 @@ require_once "partials/header.php";
             <img src="public/images/Bibliothèque.jpg" alt="Bibliothèque">
         </div>
     </section>
+
     <section class="books-list">
         <h1 class="section-title">Les derniers livres ajoutés</h1>
         <div class="books-grid">
             <?php foreach ($book as $b): ?>
                 <div class="book-card">
-                    <img src="public/uploads/livres/<?= $b['image'] ?>" alt="Couverture de <?= $b['title'] ?>">
-                    <h3><?= $b['title'] ?></h3>
-                    <p><?= $b['author'] ?></p>
+                    <a href="index.php?action=show_book&id=<?= $b['id'] ?>">
+                        <img src="public/uploads/livres/<?= $b['image'] ?>" alt="Couverture de <?= $b['title'] ?>">
+                        <div class="book-infos">
+                            <h3><?= $b['title'] ?></h3>
+                            <p><?= $b['author'] ?></p>
+                            <?php if (isset($b['username'])): ?>
+                                <p class="book-owner">Vendu par : <?= $b['username'] ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -31,6 +39,7 @@ require_once "partials/header.php";
             <a class="btn-primary" href="index.php?action=catalog">Voir tous les livres</a>
         </div>
     </section>
+
     <section class="how-it-work">
         <div class="container">
 

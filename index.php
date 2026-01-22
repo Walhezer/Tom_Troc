@@ -34,6 +34,11 @@ switch ($action) {
                 $controller->catalog();
                 break;
 
+        case 'show_book':
+                $controller = new BookController();
+                $controller->showbook();
+                break;
+
         default:
                 echo "<h1>Error 404: Page not found</h1>";
                 break;

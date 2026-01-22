@@ -16,6 +16,10 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -90,6 +94,10 @@ footer {
     align-items: center;
     gap: 20px;
     justify-content: flex-end;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
 .footer-container a {
@@ -243,23 +251,84 @@ input:focus {
 .books-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .book-card {
     background-color: #fff;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+    border: none;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .book-card img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 5px;
+    display: block;
+    border-radius: 0;
 }
+
+.book-infos {
+    height: 124px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.book-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 0 0 5px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-card p {
+    font-family: 'Inter', sans-serif;
+    color: #999;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.book-owner {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: #b0b0b0;
+    font-style: italic;
+    margin: 0;
+}
+
+.book-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+
 
 .block-btn {
     text-align: center;
@@ -431,4 +500,124 @@ input:focus {
 
 .our-values .section-title {
     margin-top: 0;
+}
+
+.book-detail-container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background-color: #FAF9F7;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.breadcrumb a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #00AC66;
+}
+
+.book-detail-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.book-cover {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.book-infos {
+    flex: 1;
+    padding: 30px 60px
+}
+
+.detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.detail-author {
+    color: #999;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.separator-line {
+    width: 100%;
+    height: 1px;
+    background-color: #E5E5E5;
+    margin-bottom: 30px;
+}
+
+.detail-section h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.description-text {
+    margin-bottom: 50px;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1rem;
+}
+
+.owner-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.owner-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.owner-name {
+    font-weight: 600;
+}
+
+.btn-message {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 15px 0;
 }
