@@ -45,8 +45,7 @@ require_once 'partials/header.php';
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
                         <input type="password" id="password" name="password" placeholder="********">
-                        <small style="color: #999; font-size: 0.8rem; display:block; margin-top:5px;">Laisser vide pour
-                            ne pas changer</small>
+                        <small class="form-hint">Laisser vide pour ne pas changer</small>
                     </div>
 
                     <div class="form-group">
@@ -104,10 +103,10 @@ require_once 'partials/header.php';
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6" style="text-align:center; padding: 30px;">
+                            <td colspan="6" class="empty-table-message">
                                 Vous n'avez ajouté aucun livre pour le moment.
                                 <br><br>
-                                <a href="index.php?action=add_book" class="btn">Ajouter un livre</a>
+                                <a href="index.php?action=add_book" class="btn-outline">Ajouter un livre</a>
                             </td>
                         </tr>
                     <?php endif; ?>
