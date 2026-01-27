@@ -16,19 +16,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Allows the footer to stay at the bottom */
 }
 
 main {
     flex: 1;
-    /* Pushes the footer down if content is short */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
 }
 
 /* =========================================
@@ -41,7 +32,7 @@ footer {
 
 header {
     background-color: #F5F3EF;
-    padding: 15px 50px;
+    padding: 15px 150px;
     border-bottom: 1px solid #EDEDED;
 }
 
@@ -49,14 +40,15 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
 }
 
 header nav a {
     text-decoration: none;
     color: #333;
-    font-size: 0.95rem;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -67,18 +59,18 @@ header nav a.active {
 .header-left-side {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 78px;
 }
 
 .header-nav-links {
     display: flex;
-    gap: 40px;
+    gap: 44px;
 }
 
 .header-right-side {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 58px;
 }
 
 .header-logo img {
@@ -92,27 +84,28 @@ header nav a.active {
    3. FOOTER
    ========================================= */
 footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
     background-color: #fff;
-    padding: 15px 50px;
+    padding: 0px 30px;
     border-top: 1px solid #EDEDED;
-    text-align: right;
 }
 
 .footer-container {
     display: flex;
+    font-size: 12px;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     justify-content: flex-end;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
     width: 100%;
 }
 
 .footer-container a {
     text-decoration: none;
     color: #666;
-    font-size: 0.85rem;
 }
 
 .footer-mini-logo {
@@ -134,7 +127,6 @@ footer {
     text-align: left;
 }
 
-/* Left side: Image */
 .auth-image-side {
     flex: 1;
     position: relative;
@@ -152,7 +144,6 @@ footer {
     left: 0;
 }
 
-/* Right side: Form */
 .auth-form-side {
     flex: 1;
     display: flex;
@@ -164,21 +155,20 @@ footer {
     background-color: #FAF9F7;
 }
 
-.auth-form-side form,
-.auth-form-side h1,
-.auth-form-side .auth-link {
-    width: 100%;
-    max-width: 400px;
-}
 
 /* Auth Components */
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-family: 'Playfair Display';
     font-weight: 400;
     color: #000;
-    text-align: left;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
 }
 
 .form-group {
@@ -228,16 +218,14 @@ input:focus {
 }
 
 .btn-primary {
-    width: 100%;
-    padding: 15px;
+    padding: 22px 38px;
     background-color: #00AC66;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 10px;
     transition: background-color 0.3s;
     font-family: 'Mulish', sans-serif;
     text-decoration: none;
@@ -267,7 +255,8 @@ input:focus {
 .hero {
     display: flex;
     align-items: center;
-    padding: 60px;
+    padding-top: 60px;
+    padding-bottom: 100px;
     justify-content: center;
     background-color: #F5F3EF;
 }
@@ -286,9 +275,27 @@ input:focus {
     height: auto;
 }
 
+.photo-credit {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #A6A6A6;
+    margin-top: 8px;
+    font-style: italic;
+    margin-right: 5px;
+}
+
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3em;
+    font-size: 36px;
+    font-weight: 400;
+    max-width: 330px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    max-width: 330px;
+    margin-bottom: 20px;
 }
 
 .hero-content .btn-primary {
@@ -297,22 +304,32 @@ input:focus {
     width: fit-content;
 }
 
-/* "How it works" Section */
 .how-it-work {
     background-color: #F5F3EF;
     overflow: hidden;
     padding-bottom: 100px;
 }
 
-.how-it-work .section-title {
-    margin-bottom: 20px;
+.books-list h2 {
+    margin: 70px 0;
+
+}
+
+.how-it-work h2 {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.values-content h2 {
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 .steps-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -328,13 +345,20 @@ input:focus {
     text-align: center;
     border-radius: 10px;
     padding: 15px;
-    width: 185px;
+    width: 215px;
     height: 139px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     font-size: 14px;
+}
+
+.step-card p {
+    color: #292929;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 170px;
 }
 
 .btn-outline {
@@ -344,8 +368,8 @@ input:focus {
     background-color: transparent;
     color: #00AC66;
     border: 1px solid #00AC66;
-    padding: 15px 30px;
-    border-radius: 4px;
+    padding: 22px 38px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
@@ -365,6 +389,7 @@ input:focus {
     width: 100%;
     height: 230px;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -374,42 +399,39 @@ input:focus {
 }
 
 .values-content {
-    max-width: 392px;
+    max-width: 370px;
     margin: 0 auto;
-    color: #333;
-    font-size: 16px;
-}
-
-.values-content h2 {
-    text-align: left;
-    margin-bottom: 40px;
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
 }
 
 .values-content p {
-    margin-bottom: 20px;
+    color: #292929;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    line-height: 1.25;
+    margin-bottom: 25px;
 }
 
 .signature-block {
-    margin-top: 40px;
     display: flex;
+    margin-top: 35px;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .signature-block cite {
-    font-weight: normal;
     color: #999;
-    font-style: normal;
-    font-size: 14px;
+    font-style: italic;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
 }
 
 .signature-block img {
     width: 120px;
     height: 102px;
     margin-top: 0;
+    transform: translate(60px, -15px);
 }
 
 .our-values .section-title {
@@ -419,134 +441,119 @@ input:focus {
 /* =========================================
    6. BOOK LISTING & CARDS
    ========================================= */
-.books-list {
-    padding-bottom: 60px;
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.catalogue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 914px;
+    margin: 130px auto 72px auto;
+}
+
+
+.search-form {
+    position: relative;
+}
+
+.search-form input {
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    border: 1px;
+    width: 322px;
+    height: 50px;
+}
+
+.search-form i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+
+.book-list {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    gap: 40px;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto 40px auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px 38px;
+    max-width: 914px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.container .books-grid {
+    margin-bottom: 80px;
 }
 
 .book-card {
-    background-color: #fff;
+    background-color: white;
     width: 200px;
-    border-radius: 0 0 20px 20px;
-    text-align: left;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    border: none;
+    height: 324px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.01);
+}
+
+.book-card a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .book-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
-}
-
-.book-card h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 5px;
-    line-height: 1.2;
-}
-
-.book-card p {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: #b0b0b0;
-    font-style: italic;
-    margin: 0;
-}
-
-.book-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
 }
 
 .book-infos {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+    padding: 15px;
     text-align: left;
-    flex: 1;
-    min-height: 100px;
 }
 
 .book-infos h3 {
-    font-family: 'Mulish', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-family: 'inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     color: #000;
-    margin-bottom: 5px;
-    line-height: 1.2;
-    /* Truncate text after 2 lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 0 0 5px 0;
 }
 
 .book-infos p {
-    font-family: 'Mulish', sans-serif;
-    font-size: 13px;
-    color: #999;
-    margin: 0;
+    font-size: 14px;
+    color: #A6A6A6;
+    margin: 0 0 25px 0;
 }
 
 .book-infos .book-owner {
-    font-size: 11px;
+    font-size: 10px;
     font-style: italic;
-    color: #999;
+    color: #999999;
     margin-top: auto;
-    padding-top: 10px;
-}
-
-.book-owner {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: #b0b0b0;
-    font-style: italic;
-    margin: 0;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .block-btn {
-    text-align: center;
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
 }
 
-.section-title {
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-}
-
-.block-btn .btn-primary {
-    padding: 22px 38px;
-    border-radius: 10px;
-    display: inline-block;
-    width: auto;
-}
 
 /* =========================================
    7. BOOK DETAIL PAGE
@@ -597,10 +604,6 @@ input:focus {
     display: block;
 }
 
-.book-infos {
-    flex: 1;
-    padding: 30px 60px
-}
 
 .detail-title {
     font-family: 'Playfair Display', serif;
@@ -670,19 +673,16 @@ input:focus {
    ========================================= */
 
 .account-page {
+    padding-top: 103px;
     padding-bottom: 80px;
 }
 
 .account-page .section-title.text-left {
-    text-align: left;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-/* Main Top Container (Profile + Form)
-   - display: flex: Places elements side by side
-   - align-items: stretch: Forces both blocks to have equal height
-*/
+
 .account-info-wrapper {
     display: flex;
     gap: 40px;
@@ -691,7 +691,6 @@ input:focus {
     width: 100%;
 }
 
-/* --- Left Column: Profile Card --- */
 .profile-card {
     background: #fff;
     padding: 40px;
@@ -699,9 +698,7 @@ input:focus {
     box-shadow: none;
     border: 1px solid #f0f0f0;
 
-    /* Layout & Size */
     flex: 1;
-    /* Takes 50% of the available width */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -764,7 +761,6 @@ input:focus {
     text-align: center;
 }
 
-/* --- Right Column: Form --- */
 .profile-form-container {
     background: #fff;
     padding: 40px;
@@ -772,9 +768,7 @@ input:focus {
     box-shadow: none;
     border: 1px solid #f0f0f0;
 
-    /* Layout & Size */
     flex: 1;
-    /* Takes 50% of the available width */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -799,14 +793,12 @@ input:focus {
     margin-top: 5px;
 }
 
-/* --- Bottom Section: Books Table --- */
 .user-books-section {
     width: 100%;
     background: #fff;
     padding: 0;
     border-radius: 10px;
     overflow: hidden;
-    /* Ensures content respects the border-radius */
     box-shadow: none;
     border: 1px solid #f0f0f0;
 }
@@ -901,13 +893,9 @@ input:focus {
     padding: 30px;
 }
 
-/* =========================================
-   9. RESPONSIVE DESIGN (Mobile)
-   ========================================= */
 @media (max-width: 768px) {
     .account-info-wrapper {
         flex-direction: column;
-        /* Stacks the columns vertically */
         align-items: stretch;
     }
 
@@ -920,6 +908,5 @@ input:focus {
 
     .user-books-section {
         overflow-x: auto;
-        /* Allows horizontal scroll for the table */
     }
 }

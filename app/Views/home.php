@@ -14,11 +14,12 @@ require_once "partials/header.php";
 
         <div class="hero-image">
             <img src="public/images/Bibliothèque.jpg" alt="Bibliothèque">
+            <span class="photo-credit">Hamza</span>
         </div>
     </section>
 
     <section class="books-list">
-        <h1 class="section-title">Les derniers livres ajoutés</h1>
+        <h2 class="section-title">Les derniers livres ajoutés</h2>
         <div class="books-grid">
             <?php foreach ($book as $b): ?>
                 <div class="book-card">
@@ -28,7 +29,12 @@ require_once "partials/header.php";
                             <h3><?= $b['title'] ?></h3>
                             <p><?= $b['author'] ?></p>
                             <?php if (isset($b['username'])): ?>
-                                <p class="book-owner">Vendu par : <?= $b['username'] ?></p>
+                                <p class="book-owner">
+                                    Vendu par :
+                                    <a href="index.php?action=public_profile&id=<?= $b['user_id'] ?>">
+                                        <?= $b['username'] ?>
+                                    </a>
+                                </p>
                             <?php endif; ?>
                         </div>
                     </a>

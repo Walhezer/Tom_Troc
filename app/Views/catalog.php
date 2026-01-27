@@ -6,8 +6,14 @@ require_once 'partials/header.php';
 <main>
     <section class="books-list">
         <div class="container">
-            <h1 class="section-title">Nos livres à l'échange</h1>
+            <div class="catalogue-header">
+                <h1 class="section-title">Nos livres à l'échange</h1>
 
+                <form action="" method="GET" class="search-form">
+                    <i class="fas fa-search"></i>
+                    <input type="text" name="search" placeholder="Rechercher un livre">
+                </form>
+            </div>
             <div class="books-grid">
                 <?php
                 if (isset($books) && count($books) > 0):
@@ -21,7 +27,7 @@ require_once 'partials/header.php';
                                 </a>
                             </div>
 
-                            <div class="book-info">
+                            <div class="book-infos">
                                 <h3><?= htmlspecialchars($book['title']) ?></h3>
                                 <p class="book-author"><?= htmlspecialchars($book['author']) ?></p>
                                 <p class="book-owner">Vendu par : <?= htmlspecialchars($book['username'] ?? 'Membre') ?></p>

@@ -44,6 +44,11 @@ switch ($action) {
                 $controller->account();
                 break;
 
+        case 'public_profile':
+                $controller = new UserController();
+                $controller->public_profile();
+                break;
+
         default:
                 echo "<h1>Error 404: Page not found</h1>";
                 break;

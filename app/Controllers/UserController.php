@@ -10,8 +10,8 @@ class UserController
     public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $username = htmlspecialchars($_POST['username']);
-            $email = htmlspecialchars($_POST['email']);
+            $username = htmlspecialchars(trim($_POST['username']));
+            $email = htmlspecialchars(trim($_POST['email']));
             $password = $_POST['password'];
 
             $userManager = new UserManager();
@@ -32,7 +32,7 @@ class UserController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $email = htmlspecialchars($_POST['email']);
+            $email = htmlspecialchars(trim($_POST['email']));
             $password = $_POST['password'];
 
             $userManager = new UserManager();
@@ -81,5 +81,36 @@ class UserController
         }
 
         require_once 'app/Views/account.php';
+    }
+
+    // Handle public profile
+    public function public_profile()
+    {
+        if (!isset($_GET['id'])) {
+            header('Location: index.php?action=home');
+            exit();
+        }
+
+        $userId = $_GET['id'];
+
+        $userManager = new UserManager();
+        $bookManager = new BookManager();
+
+        $user = $userManager->getUserById($userId);
+        $books = $bookManager->getBooksByUserId($userId);
+
+        $creationDate = new DateTime($user['created_at']);
+        $now = new DateTime();
+        $interval = $now->diff($creationDate);
+
+        if ($interval->y > 0) {
+            $memberSince = $interval->y . ' an(s)';
+        } elseif ($interval->m > 0) {
+            $memberSince = $interval->m . ' mois';
+        } else {
+            $memberSince = "moins d'un mois";
+        }
+
+        require_once 'app/Views/public_profile.php';
     }
 }
