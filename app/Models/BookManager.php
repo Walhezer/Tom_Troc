@@ -52,4 +52,20 @@ class BookManager
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    //Update a book
+    public function updateBook($id, $title, $author, $description, $image, $available)
+    {
+        $sql = 'UPDATE books SET title = :title, author = :author, description = :description,
+        image = :image, available = :available WHERE id = :id';
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':author', $author, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+        $stmt->bindParam(':available', $available, PDO::PARAM_BOOL);
+        return $stmt->execute();
+    }
 }
+

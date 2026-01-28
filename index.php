@@ -49,6 +49,11 @@ switch ($action) {
                 $controller->public_profile();
                 break;
 
+        case 'edit_book':
+                $controller = new BookController();
+                $controller->editBook();
+                break;
+
         default:
                 echo "<h1>Error 404: Page not found</h1>";
                 break;
