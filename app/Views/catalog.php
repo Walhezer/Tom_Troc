@@ -30,7 +30,11 @@ require_once 'partials/header.php';
                             <div class="book-infos">
                                 <h3><?= htmlspecialchars($book['title']) ?></h3>
                                 <p class="book-author"><?= htmlspecialchars($book['author']) ?></p>
-                                <p class="book-owner">Vendu par : <?= htmlspecialchars($book['username'] ?? 'Membre') ?></p>
+                                <p class="book-owner">Vendu par : <a
+                                        href="index.php?action=public_profile&id=<?= $book['user_id'] ?>">
+                                        <?= $book['username'] ?>
+                                    </a>
+                                </p>
                             </div>
                         </article>
                     <?php endforeach; ?>

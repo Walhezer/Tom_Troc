@@ -26,8 +26,14 @@
             </div>
 
             <div class="header-right-side">
-                <a href="index.php?action=messages">Messagerie</a>
-                <a href="index.php?action=account">Mon compte</a>
+                <a href="index.php?action=messages" class="link-with-icon">
+                    <img src="public/images/Icon-message.png" alt="Message" class="header-icon">
+                    Messagerie
+                </a>
+                <a href="index.php?action=account" class="link-with-icon">
+                    <img src="public/images/Icon-user.png" alt="Compte" class="header-icon">
+                    Mon compte
+                </a>
                 <a href="index.php?action=login">Connexion</a>
             </div>
         </nav>

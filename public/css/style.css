@@ -73,6 +73,17 @@ header nav a.active {
     gap: 58px;
 }
 
+header .header-right-side a.link-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-icon {
+    height: 13px;
+    width: auto;
+}
+
 .header-logo img {
     height: 40px;
     width: auto;
@@ -320,6 +331,11 @@ input:focus {
     margin-bottom: 30px;
 }
 
+.how-it-work .btn-outline {
+    margin: 40px auto 0;
+    display: flex;
+}
+
 .values-content h2 {
     text-align: left;
     margin-bottom: 40px;
@@ -362,9 +378,11 @@ input:focus {
 }
 
 .btn-outline {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
     width: fit-content;
-    margin: 40px auto 0;
     background-color: transparent;
     color: #00AC66;
     border: 1px solid #00AC66;
@@ -673,134 +691,194 @@ input:focus {
    ========================================= */
 
 .account-page {
-    padding-top: 103px;
-    padding-bottom: 80px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+    background-color: #FAF9F7;
+    min-height: calc(100vh - 140px);
 }
 
-.account-page .section-title.text-left {
-    margin-top: 40px;
-    margin-bottom: 40px;
+.account-page .container {
+    max-width: 1135px;
+    margin: 0 auto;
 }
 
+.account-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 48px;
+}
 
 .account-info-wrapper {
     display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-    align-items: stretch;
+    gap: 33px;
+    margin-bottom: 32px;
     width: 100%;
 }
 
-.profile-card {
+.account-info-wrapper .profile-card,
+.account-info-wrapper .profile-form-container {
+    flex: 1;
+}
+
+.profile-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.profil-layout .profile-card {
+    height: fit-content;
+    justify-content: flex-start;
+}
+
+.profile-layout .user-books-section {
+    flex: 1;
+}
+
+.profile-card,
+.profile-form-container,
+.user-books-section {
     background: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: none;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
+}
 
-    flex: 1;
-    width: 100%;
+.form-group input {
+    width: 322px;
+    max-width: 100%;
+    background-color: #F4F6F8;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-form-container input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 172, 102, 0.2);
+    outline: none;
+}
+
+@media (max-width: 1024px) {
+    .profile-form-container input {
+        width: 100%;
+    }
+}
+
+
+
+.profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    height: auto;
     justify-content: center;
 }
 
 .profile-avatar img {
-    width: 120px;
-    height: 120px;
+    width: 135px;
+    height: 135px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.edit-avatar-link {
-    display: block;
-    color: #999;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.profile-card hr {
-    width: 300px;
-    border: none;
-    border-top: 1px solid #F5F3EF;
-    margin: 10px 0 20px;
+    margin-bottom: 11px;
 }
 
 .profile-username {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
+    color: #333;
 }
 
 .member-since {
-    color: #999;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+    color: rgba(166, 166, 166, 1);
+    font-size: 14px;
+    margin-bottom: 21px;
     text-align: center;
+}
+
+.profile-card hr {
+    width: 60px;
+    border-top: 1px solid #E5E5E5;
+    margin: 10px 0 25px 0;
 }
 
 .library-stats .label {
     display: block;
-    font-weight: 700;
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 8px;
+    margin-bottom: 6px;
     text-align: center;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .library-stats .count {
-    font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     display: block;
     text-align: center;
 }
 
 .profile-form-container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: none;
-    border: 1px solid #f0f0f0;
-
-    flex: 1;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    --field-width: 322px;
 }
 
 .profile-form-container h3 {
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 30px;
+    width: var(--field-width);
+    max-width: 100%;
+    margin: 0 auto 12px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .profile-form-container form {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form-hint {
-    color: #999;
-    font-size: 0.8rem;
-    display: block;
-    margin-top: 5px;
+.profile-form-container .form-group {
+    width: var(--field-width);
+    max-width: 100%;
+}
+
+.profile-form-container .form-group label {
+    text-align: left;
+}
+
+.profile-form-container .btn-wrap {
+    width: var(--field-width);
+    max-width: 100%;
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-form-container .btn-wrap .btn-outline {
+    background-color: #F3F5EF;
+
 }
 
 .user-books-section {
     width: 100%;
-    background: #fff;
     padding: 0;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: none;
-    border: 1px solid #f0f0f0;
 }
 
 .user-books-section table {
@@ -810,44 +888,36 @@ input:focus {
 
 .books-table th {
     text-align: left;
-    padding: 25px;
+    padding: 25px 30px;
     background-color: #fff;
-    font-weight: 700;
-    color: #333;
-    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(41, 41, 41, 1);
+    font-size: 8px;
     text-transform: uppercase;
+    border-bottom: 1px solid #E5E5E5;
 }
 
 .books-table td {
-    padding: 25px;
+    padding: 25px 30px;
     vertical-align: middle;
     border-bottom: 1px solid #eee;
 }
 
-
-
-.books-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
 .books-table tbody tr:nth-child(even) {
-    background-color: #F5F3EF;
+    background-color: #EDF2F6;
 }
-
-
 
 .book-thumb {
-    width: 60px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
     object-fit: cover;
     display: block;
-    border-radius: 5px;
 }
 
 .book-title {
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
 }
 
 .book-desc .desc-content {
@@ -855,13 +925,15 @@ input:focus {
     color: #666;
     font-size: 0.85rem;
     line-height: 1.4;
+    font-style: italic;
 }
 
 .badge {
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    padding: 4px 13px;
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
     display: inline-block;
 }
 
@@ -890,23 +962,30 @@ input:focus {
 
 .empty-table-message {
     text-align: center;
-    padding: 30px;
+    padding: 40px;
+    color: #666;
 }
 
-@media (max-width: 768px) {
-    .account-info-wrapper {
+@media (max-width: 1024px) {
+    .account-page .container {
+        padding: 0 20px;
+    }
+
+    .account-info-wrapper,
+    .profile-layout {
         flex-direction: column;
-        align-items: stretch;
     }
 
-    .profile-card,
-    .profile-form-container {
+    .profile-layout .profile-card {
         width: 100%;
-        margin-bottom: 20px;
     }
-
 
     .user-books-section {
         overflow-x: auto;
     }
+}
+
+.profile-card .btn-outline {
+    background-color: #EDF2F6;
+    margin-top: 45px;
 }
