@@ -87,4 +87,47 @@ class BookController
 
         require_once 'app/Views/edit_book.php';
     }
+
+    public function addBook()
+    {
+        //Verify user is logged in
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: index.php?action=login');
+            exit;
+        }
+        //Handle form submission
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $title = htmlspecialchars(trim($_POST['title']));
+            $author = htmlspecialchars(trim($_POST['author']));
+            $description = htmlspecialchars(trim($_POST['description']));
+            $userId = $_SESSION['user_id'];
+            $imageName = 'default-book.jpg';
+
+            //Image management
+            if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
+                $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+                $fileName = $_FILES['image']['name'];
+                $fileTmp = $_FILES['image']['tmp_name'];
+                $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+                //Check file extension
+                if (in_array($fileExt, $allowed)) {
+                    $newFileName = uniqid() . '.' . $fileExt;
+                    $destination = 'public/uploads/livres/' . $newFileName;
+
+                    if (move_uploaded_file($fileTmp, $destination)) {
+                        $imageName = $newFileName;
+                    }
+                }
+            }
+            //Add the book to the database
+            $bookManager = new BookManager();
+            if ($bookManager->addBook($title, $author, $description, $imageName, $userId)) {
+                header('Location: index.php?action=account&success=book_added');
+                exit;
+            }
+        }
+
+        require_once 'app/Views/add_book.php';
+    }
 }

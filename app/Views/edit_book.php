@@ -14,6 +14,7 @@ require_once 'partials/header.php';
 
         <div class="edit-book-wrapper">
             <div class="edit-book-image-col">
+                <p>Photo</p>
                 <div class="current-book-image">
                     <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>" alt="Couverture actuelle">
                 </div>
@@ -45,8 +46,8 @@ require_once 'partials/header.php';
                 <div class="form-group">
                     <label for="available">Disponibilité</label>
                     <select name="available" id="available" class="form-control-light">
-                        <option value="1" <?= $book['available'] == 1 ? 'selected' : '' ?>>Disponible</option>
-                        <option value="0" <?= $book['available'] == 0 ? 'selected' : '' ?>>Non disponible</option>
+                        <option value="1" <?= $book['available'] == 1 ? 'selected' : '' ?>>disponible</option>
+                        <option value="0" <?= $book['available'] == 0 ? 'selected' : '' ?>>non disponible</option>
                     </select>
                 </div>
 

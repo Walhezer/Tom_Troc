@@ -67,5 +67,18 @@ class BookManager
         $stmt->bindParam(':available', $available, PDO::PARAM_BOOL);
         return $stmt->execute();
     }
+
+    public function addBook($title, $author, $description, $image, $available)
+    {
+        $sql = 'INSERT INTO books (title, author, description, image, user_id, available) VALUES (:title, :author, :description, :image, :user_id, 1)';
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':author', $author, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':available', $available, PDO::PARAM_BOOL);
+        return $stmt->execute();
+    }
 }
 

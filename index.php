@@ -54,6 +54,11 @@ switch ($action) {
                 $controller->editBook();
                 break;
 
+        case 'add_book':
+                $controller = new BookController();
+                $controller->addBook();
+                break;
+
         default:
                 echo "<h1>Error 404: Page not found</h1>";
                 break;

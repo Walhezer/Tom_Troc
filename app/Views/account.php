@@ -109,6 +109,9 @@ require_once 'partials/header.php';
             </table>
         </div>
 
+        <div class="add-book-action">
+            <a href="index.php?action=add_book" class="btn-primary">Ajouter un livre</a>
+        </div>
     </div>
 </main>
 
