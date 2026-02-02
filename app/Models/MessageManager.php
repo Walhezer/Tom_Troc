@@ -36,8 +36,7 @@ class MessageManager
                 WHERE sender_id = :id3 OR receiver_id = :id4
                 GROUP BY IF(sender_id = :id5, receiver_id, sender_id)
             )
-            ORDER BY m.created_at DESC
-        ";
+            ORDER BY m.created_at DESC";
 
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
@@ -47,7 +46,13 @@ class MessageManager
             'id4' => $userId,
             'id5' => $userId
         ]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $conversations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($conversations as &$conv) {
+            $conv['avatar_url'] = $this->getAvatarPath($conv['image']);
+        }
+
+        return $conversations;
     }
 
     //Retrieve messages between
@@ -95,5 +100,20 @@ class MessageManager
             'userId' => $userId,
             'senderId' => $senderId
         ]);
+    }
+
+    //Get avatar path
+    public function getAvatarPath($imageName)
+    {
+        $folder = "public/images/";
+        $default = "public/images/default-avatar.png";
+
+        $fullPath = __DIR__ . "/../../" . $folder . $imageName;
+
+        if (!empty($imageName) && file_exists($fullPath)) {
+            return $folder . $imageName;
+        }
+
+        return $default;
     }
 }

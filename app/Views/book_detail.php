@@ -34,14 +34,11 @@ require_once 'partials/header.php';
                     <h3>PROPRIÉTAIRE</h3>
                     <div class="owner-card">
                         <div class="owner-avatar">
-                            <?php if (!empty($book['userImage'])): ?>
-                                <img src="public/uploads/users/<?= htmlspecialchars($book['userImage']) ?>"
-                                    alt="<?= htmlspecialchars($book['username']) ?>">
-                            <?php else: ?>
-                                <img src="public/images/auth-background.jpg" alt="Avatar par défaut" style="opacity:0.5">
-                            <?php endif; ?>
+                            <img src="<?= $owner['avatar_url'] ?>" alt="<?= htmlspecialchars($owner['username']) ?>">
                         </div>
-                        <span class="owner-name"><?= htmlspecialchars($book['username']) ?></span>
+                        <a href="index.php?action=public_profile&id=<?= $owner['id'] ?>" class="owner-link">
+                            <span class="owner-name"><?= htmlspecialchars($owner['username']) ?></span>
+                        </a>
                     </div>
                 </div>
 

@@ -11,11 +11,7 @@ require_once 'partials/header.php';
             <div class="profile-card">
                 <form action="index.php?action=account" method="post" enctype="multipart/form-data" id="avatarForm">
                     <div class="profile-avatar">
-                        <?php if (!empty($user['image'])): ?>
-                            <img src="public/uploads/users/<?= htmlspecialchars($user['image']) ?>" alt="Avatar">
-                        <?php else: ?>
-                            <img src="public/images/auth-background.jpg" alt="Avatar par défaut">
-                        <?php endif; ?>
+                        <img src="<?= $user['avatar_url'] ?>" alt="Avatar">
                     </div>
                     <label for="file-upload" class="edit-avatar-link" style="cursor:pointer;">modifier</label>
                     <input type="file" id="file-upload" name="avatar" style="display: none;">

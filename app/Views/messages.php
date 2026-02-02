@@ -19,8 +19,7 @@ require_once 'partials/header.php';
 
                         <a href="index.php?action=messages&id=<?= $conv['id'] ?>"
                             class="conv-item <?= $isActive ?> <?= $isUnread ?>">
-                            <img src="<?= $conv['image'] ? 'public/images/' . htmlspecialchars($conv['image']) : 'public/images/default-avatar.png' ?>"
-                                alt="Avatar" class="conv-avatar">
+                            <img src="<?= $conv['avatar_url'] ?>" alt="Avatar" class="conv-avatar">
                             <div class="conv-info">
                                 <div class="conv-top">
                                     <span class="conv-username">
@@ -44,8 +43,7 @@ require_once 'partials/header.php';
             <?php if ($selectedUser): ?>
 
                 <div class="chat-header">
-                    <img src="<?= $selectedUser['image'] ? 'public/uploads/users/' . htmlspecialchars($selectedUser['image']) : 'public/images/default-avatar.png' ?>"
-                        alt="Avatar">
+                    <img src="<?= $selectedUser['avatar_url'] ?>" alt="Avatar" class="chat-avatar">
                     <span class="chat-username"><?= htmlspecialchars($selectedUser['username']) ?></span>
                 </div>
 

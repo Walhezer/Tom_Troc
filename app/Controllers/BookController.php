@@ -1,6 +1,7 @@
 <?php
 
 require_once 'app/Models/BookManager.php';
+require_once 'app/Models/UserManager.php';
 
 class BookController
 {
@@ -22,6 +23,9 @@ class BookController
                 header('Location: index.php?action=catalog');
                 exit;
             }
+
+            $usermanager = new UserManager();
+            $owner = $usermanager->getUserById($book['user_id']);
             require_once 'app/Views/book_detail.php';
         } else {
             header('Location: index.php?action=catalog');

@@ -46,6 +46,23 @@ class UserManager
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user['avatar_url'] = $this->getAvatarPath($user['image']);
+        return $user;
+    }
+
+    //Get avatar path
+    public function getAvatarPath($imageName)
+    {
+        $folder = "public/images/";
+        $default = "public/images/default-avatar.png";
+
+        $fullPath = __DIR__ . "/../../" . $folder . $imageName;
+
+        if (!empty($imageName) && file_exists($fullPath)) {
+            return $folder . $imageName;
+        }
+
+        return $default;
     }
 }

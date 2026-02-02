@@ -586,18 +586,31 @@ input:focus {
    7. BOOK DETAIL PAGE
    ========================================= */
 .book-detail-container {
-    padding-top: 40px;
-    padding-bottom: 80px;
-    background-color: #FAF9F7;
-    min-height: 100%;
+    padding-bottom: 50px;
+    width: 100%;
+    min-height: 100vh;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+.book-detail-container .container {
+    background-color: rgb(245, 243, 239);
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .breadcrumb {
     margin-bottom: 30px;
+    background-color: transparent;
     font-size: 0.9rem;
     color: #999;
+    max-width: 1440px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
 }
 
 .breadcrumb a {
@@ -612,21 +625,32 @@ input:focus {
 
 .book-detail-wrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
+    min-height: 600px;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    gap: 60px;
+    background-color: white;
 }
 
-.book-cover {
+.book-detail-wrapper .book-infos {
     flex: 0 0 50%;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-detail-wrapper .book-cover {
+    flex: 0 0 50%;
+    width: 50%;
     position: relative;
+    overflow: hidden;
 }
 
 .book-cover img {
     width: 100%;
-    height: 600px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -647,15 +671,16 @@ input:focus {
 }
 
 .separator-line {
-    width: 100%;
+    width: 27px;
     height: 1px;
     background-color: #E5E5E5;
     margin-bottom: 30px;
 }
 
 .detail-section h3 {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -663,6 +688,7 @@ input:focus {
 }
 
 .description-text {
+    width: 485px;
     margin-bottom: 50px;
     line-height: 1.6;
     color: #333;
@@ -672,6 +698,10 @@ input:focus {
 .owner-card {
     display: flex;
     align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 114px;
+    width: fit-content;
+    padding: 6px 17px 6px 6px;
     gap: 15px;
     margin-bottom: 40px;
 }
@@ -684,14 +714,22 @@ input:focus {
 }
 
 .owner-name {
-    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(41, 41, 41, 1);
 }
 
-.btn-message {
+.owner-link {
+    text-decoration: none;
+}
+
+.book-infos .btn-primary {
     display: block;
+    max-width: 485px;
     width: 100%;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 15px 0;
 }
 

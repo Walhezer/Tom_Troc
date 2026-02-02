@@ -9,13 +9,8 @@ require_once 'partials/header.php';
         <div class="profile-layout">
             <div class="profile-card">
                 <div class="profile-avatar">
-                    <?php if (!empty($user['image'])): ?>
-                        <img src="public/images/<?= htmlspecialchars($user['image']) ?>" alt="Avatar">
-                    <?php else: ?>
-                        <img src="public/images/default-avatar.png" alt="Avatar par défaut">
-                    <?php endif; ?>
+                    <img src="<?= $user['avatar_url'] ?>" alt="Avatar">
                 </div>
-
                 <hr>
                 <h2 class="profile-username"><?= htmlspecialchars($user['username']) ?></h2>
                 <p class="member-since">Membre depuis <?= $memberSince ?></p>
