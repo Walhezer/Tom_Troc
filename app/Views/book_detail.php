@@ -45,7 +45,7 @@ require_once 'partials/header.php';
                     </div>
                 </div>
 
-                <a href="index.php?action=message&id=<?= $book['user_id'] ?>" class="btn-primary btn-message">Envoyer un
+                <a href="index.php?action=messages&id=<?= $book['user_id'] ?>" class="btn-primary">Envoyer un
                     message</a>
             </div>
         </div>

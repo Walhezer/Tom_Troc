@@ -10,9 +10,9 @@ require_once 'partials/header.php';
             <div class="profile-card">
                 <div class="profile-avatar">
                     <?php if (!empty($user['image'])): ?>
-                        <img src="public/uploads/users/<?= htmlspecialchars($user['image']) ?>" alt="Avatar">
+                        <img src="public/images/<?= htmlspecialchars($user['image']) ?>" alt="Avatar">
                     <?php else: ?>
-                        <img src="public/images/auth-background.jpg" alt="Avatar par défaut">
+                        <img src="public/images/default-avatar.png" alt="Avatar par défaut">
                     <?php endif; ?>
                 </div>
 
@@ -25,8 +25,9 @@ require_once 'partials/header.php';
                     <span class="count"><?= count($books) ?> livres</span>
                 </div>
 
-                <a href="mailto:<?= htmlspecialchars($user['email']) ?>" class="btn-outline">Écrire un
-                    message</a>
+                <a href="index.php?action=messages&id=<?= $user['id'] ?>" class="btn-outline">
+                    Écrire un message
+                </a>
             </div>
 
             <div class="user-books-section">

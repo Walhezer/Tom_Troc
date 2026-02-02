@@ -6,6 +6,7 @@ require_once 'app/Controllers/BookController.php';
 
 require_once 'app/Models/BookManager.php';
 require_once 'app/Controllers/HomeController.php';
+require_once 'app/Controllers/MessageController.php';
 
 if (file_exists('app/Controllers/UserController.php')) {
         require_once 'app/Controllers/UserController.php';
@@ -57,6 +58,11 @@ switch ($action) {
         case 'add_book':
                 $controller = new BookController();
                 $controller->addBook();
+                break;
+
+        case 'messages':
+                $controller = new MessageController();
+                $controller->messagerie();
                 break;
 
         default:

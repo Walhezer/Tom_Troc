@@ -68,6 +68,7 @@ class BookManager
         return $stmt->execute();
     }
 
+    //Add a book
     public function addBook($title, $author, $description, $image, $available)
     {
         $sql = 'INSERT INTO books (title, author, description, image, user_id, available) VALUES (:title, :author, :description, :image, :user_id, 1)';
