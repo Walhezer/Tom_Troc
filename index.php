@@ -66,9 +66,9 @@ switch ($action) {
                 break;
 
         default:
-                echo "<h1>Error 404: Page not found</h1>";
+                $controller = new HomeController();
+                $controller->pageNotFound();
                 break;
-
 }
 
 

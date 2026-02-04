@@ -9,6 +9,12 @@ class HomeController
 
         require('app/Views/home.php');
     }
+
+    public function pageNotFound()
+    {
+        http_response_code(404);
+        require 'app/Views/404.php';
+    }
 }
 
 
