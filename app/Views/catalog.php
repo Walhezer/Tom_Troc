@@ -3,7 +3,7 @@ $title = "Nos livres à l'échange - TomTroc";
 require_once 'partials/header.php';
 ?>
 
-<main>
+<main class="catalog-page">
     <section class="books-list">
         <div class="container">
             <div class="catalogue-header">

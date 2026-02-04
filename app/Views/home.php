@@ -2,7 +2,7 @@
 $title = "Accueil - TomTroc";
 require_once "partials/header.php";
 ?>
-<main>
+<main class="home-page">
     <section class="hero">
         <div class="hero-content">
             <h1>Rejoignez nos lecteurs passionnés</h1>
@@ -74,7 +74,8 @@ require_once "partials/header.php";
     </section>
 
     <div class="img-mask">
-        <img src="public/images/Mask-group.jpg">
+        <img class="img-desktop" src="public/images/Mask-group.jpg" alt="">
+        <img class="img-mobile" src="public/images/img-mask-mobile.jpg" alt="">
     </div>
     <section class="our-values">
         <div class="values-content">

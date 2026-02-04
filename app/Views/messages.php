@@ -3,9 +3,9 @@ $title = "Messagerie - TomTroc";
 require_once 'partials/header.php';
 ?>
 
-
-<main class="messagerie-page">
+<main class="messagerie-page <?= isset($selectedUser) && $selectedUser ? 'open-chat' : '' ?>">
     <div class="messagerie-container">
+
         <div class="messagerie-sidebar">
             <h2 class="section-title">Messagerie </h2>
             <div class="conversations-list">
@@ -43,6 +43,8 @@ require_once 'partials/header.php';
             <?php if ($selectedUser): ?>
 
                 <div class="chat-header">
+                    <a href="index.php?action=messages" class="back-btn-mobile">← retour</a>
+
                     <img src="<?= $selectedUser['avatar_url'] ?>" alt="Avatar" class="chat-avatar">
                     <span class="chat-username"><?= htmlspecialchars($selectedUser['username']) ?></span>
                 </div>
@@ -50,11 +52,21 @@ require_once 'partials/header.php';
                 <div class="chat-messages" id="chatBox">
                     <?php foreach ($messages as $msg): ?>
                         <?php
-                        $type = ($msg['sender_id'] == $_SESSION['user_id']) ? 'sent' : 'received';
+                        $isSender = ($msg['sender_id'] == $_SESSION['user_id']);
+                        $type = $isSender ? 'sent' : 'received';
                         ?>
+
                         <div class="message-row <?= $type ?>">
                             <div class="message-content">
-                                <div class="message-meta"><?= date('d.m H:i', strtotime($msg['created_at'])) ?></div>
+
+                                <div class="message-meta">
+                                    <?php if (!$isSender): ?>
+                                        <img src="<?= $selectedUser['avatar_url'] ?>" alt="user" class="msg-avatar">
+                                    <?php endif; ?>
+
+                                    <?= date('d.m H:i', strtotime($msg['created_at'])) ?>
+                                </div>
+
                                 <div class="message-bubble">
                                     <?= nl2br(htmlspecialchars($msg['content'])) ?>
                                 </div>
@@ -87,7 +99,3 @@ require_once 'partials/header.php';
 </script>
 
 <?php require_once 'partials/footer.php'; ?>
-
-
-
-</main>

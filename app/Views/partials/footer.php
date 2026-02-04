@@ -6,6 +6,7 @@
         <img src="public/images/mini-logo.png" alt="logo" class="footer-mini-logo">
     </div>
 </footer>
+<script src="public/js/main.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@ $title = htmlspecialchars($book['title']) . " - TomTroc";
 require_once 'partials/header.php';
 ?>
 
-<main>
+<main class="book-detail-main">
     <div class="book-detail-container">
         <div class="container">
             <div class="breadcrumb">

@@ -2,6 +2,7 @@
    1. GLOBAL STYLES & FONTS
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
 * {
     margin: 0;
@@ -94,6 +95,132 @@ header .header-right-side a.link-with-icon {
     flex-shrink: 0;
 }
 
+.burger-menu {
+    display: none;
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: rgba(166, 166, 166, 1);
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 58px;
+}
+
+@media (min-width: 769px) {
+
+    header nav {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .header-left-side {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .header-menu {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+    .header-right-side {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-left: 30px;
+        border-left: 1px solid #ddd;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    main {
+        flex: initial;
+        min-height: auto;
+    }
+
+    header {
+        padding: 12px 16px;
+    }
+
+    .header-logo img {
+        width: 78px;
+        height: 25px;
+    }
+
+    header nav {
+        position: relative;
+    }
+
+    .burger-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .header-left-side {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .header-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #F5F3EF;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        z-index: 999;
+        border-bottom: 1px solid #EDEDED;
+    }
+
+    header.menu-open .header-menu {
+        display: flex;
+    }
+
+    .header-nav-links,
+    .header-right-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .header-menu a {
+        width: 100%;
+        padding: 10px 8px;
+    }
+}
+
+
 /* =========================================
    3. FOOTER
    ========================================= */
@@ -126,6 +253,30 @@ footer {
     vertical-align: middle;
     height: 15px;
     width: auto;
+}
+
+@media (max-width: 768px) {
+    footer {
+        height: auto;
+        padding: 24px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .footer-container a {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-mini-logo {
+        margin-top: 6px;
+    }
 }
 
 /* =========================================
@@ -175,7 +326,6 @@ footer {
 
 }
 
-/* Auth Components */
 h1 {
     font-family: 'Playfair Display';
     font-weight: 400;
@@ -266,6 +416,45 @@ input:focus {
     text-decoration: underline;
     font-weight: 700;
 }
+
+@media (max-width: 768px) {
+
+    .auth-wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .auth-form-side {
+        max-width: 100%;
+        width: 100%;
+        padding: 40px 20px;
+        justify-content: flex-start;
+        order: 1;
+        align-items: stretch;
+        flex: initial;
+    }
+
+    .auth-form-side h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+    }
+
+
+    .auth-image-side {
+        max-width: 100%;
+        width: 100%;
+        height: 350px;
+        order: 2;
+    }
+
+    .auth-image-side img {
+        position: absolute;
+        width: 100%;
+        height: 460px;
+    }
+
+}
+
 
 /* =========================================
    5. HOMEPAGE COMPONENTS
@@ -406,18 +595,24 @@ input:focus {
 }
 
 /* Values Section */
+
 .img-mask {
     width: 100%;
-    background-color: #F5F3EF;
-    display: block;
 }
 
 .img-mask img {
     width: 100%;
+}
+
+.img-mobile {
+    display: none;
+}
+
+.img-desktop {
     height: 230px;
+    display: block;
     object-fit: cover;
     object-position: center;
-    display: block;
 }
 
 .our-values {
@@ -465,6 +660,150 @@ input:focus {
     margin-top: 0;
 }
 
+@media (max-width: 768px) {
+
+    .hero {
+        display: flex;
+        align-items: stretch;
+        padding-top: 0;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 48px;
+    }
+
+    .hero>.hero-image {
+        order: 1;
+    }
+
+    .hero>.hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        max-width: none;
+        width: 100%;
+    }
+
+
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .photo-credit {
+        display: block;
+        padding: 6px 16px 0;
+        text-align: right;
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .hero-content {
+        padding-top: 32px;
+        text-align: left;
+        margin: 0 20px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 30px;
+        max-width: 325px;
+        margin-bottom: 30px;
+    }
+
+    .hero-content p {
+        max-width: 340px;
+        margin-bottom: 18px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-content .btn-primary {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .how-it-work {
+        padding-bottom: 48px;
+    }
+
+    .how-it-work .container {
+        padding: 0 20px;
+    }
+
+    .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .step-card {
+        width: 100%;
+        max-width: none;
+        padding: 28px 20px;
+        border-radius: 14px;
+    }
+
+    .step-card p {
+        font-size: 14px;
+        text-align: center;
+        max-width: 240px;
+    }
+
+    .how-it-work .btn-outline {
+        display: block;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        text-align: center;
+        padding: 18px 20px;
+        border-radius: 14px;
+    }
+
+    .img-desktop {
+        display: none;
+    }
+
+    .img-mobile {
+        display: block;
+        height: 420px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .our-values {
+        padding: 48px 20px 24px;
+    }
+
+    .values-content {
+        max-width: 335px;
+        margin: 0 auto;
+    }
+
+    .signature-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 68px;
+    }
+
+    .signature-block img {
+        transform: none;
+        margin: 0 auto;
+        width: 140px;
+        height: auto;
+        align-self: center;
+    }
+}
+
+
+
 /* =========================================
    6. BOOK LISTING & CARDS
    ========================================= */
@@ -503,12 +842,13 @@ input:focus {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #888;
+    color: #aaa;
+    z-index: 10;
+    pointer-events: none;
 }
 
 
-.book-list {
-    padding: 60px 20px;
+.books-list {
     background-color: #f5f5f5;
     text-align: center;
 }
@@ -561,17 +901,28 @@ input:focus {
     margin: 0 0 5px 0;
 }
 
-.book-infos p {
+.home-page .book-card .book-author {
     font-size: 14px;
     color: #A6A6A6;
-    margin: 0 0 25px 0;
 }
 
-.book-infos .book-owner {
+.home-page .book-card .book-owner {
     font-size: 10px;
     font-style: italic;
     color: #999999;
-    margin-top: auto;
+    margin: 18px 0 0 0;
+}
+
+.catalog-page .book-card .book-author {
+    font-size: 14px;
+    color: #A6A6A6;
+}
+
+.catalog-page .book-card .book-owner {
+    font-size: 10px;
+    font-style: italic;
+    color: #999999;
+    margin: 18px 0 0 0;
 }
 
 .block-btn {
@@ -581,15 +932,88 @@ input:focus {
     margin-bottom: 70px;
 }
 
+@media (max-width: 760px) {
+
+    .catalogue-header {
+        width: 100%;
+        margin: 55px auto 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .search-form,
+    .search-form input {
+        width: 100%;
+    }
+
+    .books-list .section-list {
+        align-items: center;
+    }
+
+    .books-list h1 {
+        max-width: 100%;
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+    .books-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        padding: 0;
+    }
+
+    .book-card {
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .book-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    .book-infos h3 {
+        font-size: 13px;
+        margin-top: 6px;
+        margin-bottom: 2px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .book-owner {
+        font-size: 10px;
+        opacity: .65;
+        margin-top: 6px;
+    }
+
+    .books-list .block-btn {
+        display: none;
+    }
+}
 
 /* =========================================
    7. BOOK DETAIL PAGE
    ========================================= */
+
+.book-detail-main {
+    flex: 0 0 auto;
+}
+
 .book-detail-container {
-    padding-bottom: 50px;
     width: 100%;
-    min-height: 100vh;
-    flex: 1;
+    min-height: auto;
+    flex: initial;
     display: flex;
     flex-direction: column;
 }
@@ -610,7 +1034,7 @@ input:focus {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
+    padding-left: 130px;
 }
 
 .breadcrumb a {
@@ -639,7 +1063,13 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #FAF9F7;
 }
+
+.book-detail-wrapper .book-infos p {
+    font-size: 14px;
+}
+
 
 .book-detail-wrapper .book-cover {
     flex: 0 0 50%;
@@ -688,10 +1118,10 @@ input:focus {
 }
 
 .description-text {
-    width: 485px;
+    width: 470px;
     margin-bottom: 50px;
     line-height: 1.6;
-    color: #333;
+    color: rgba(41, 41, 41, 1);
     font-size: 1rem;
 }
 
@@ -730,8 +1160,72 @@ input:focus {
     width: 100%;
     text-align: center;
     border-radius: 10px;
-    padding: 15px 0;
+    padding: 22px 38px;
 }
+
+@media (max-width: 768px) {
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .book-detail-wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .book-detail-wrapper .book-cover {
+        width: 100%;
+        height: 449.48px;
+    }
+
+    .book-detail-wrapper .book-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 12%;
+        display: block;
+    }
+
+    .book-detail-wrapper .book-infos {
+        width: 100%;
+        flex: initial;
+        padding: 24px 16px;
+        justify-content: flex-start;
+    }
+
+    .detail-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .detail-author {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .separator-line {
+        margin-bottom: 20px;
+    }
+
+    .description-text {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .owner-card {
+        width: fit-content;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .book-infos .btn-primary {
+        max-width: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
 
 /* =========================================
    8. MY ACCOUNT PAGE
@@ -814,8 +1308,6 @@ input:focus {
         width: 100%;
     }
 }
-
-
 
 .profile-card {
     display: flex;
@@ -994,7 +1486,6 @@ input:focus {
     color: white;
 }
 
-
 .action-link {
     text-decoration: underline;
     margin-right: 15px;
@@ -1013,25 +1504,6 @@ input:focus {
     color: #666;
 }
 
-@media (max-width: 1024px) {
-    .account-page .container {
-        padding: 0 20px;
-    }
-
-    .account-info-wrapper,
-    .profile-layout {
-        flex-direction: column;
-    }
-
-    .profile-layout .profile-card {
-        width: 100%;
-    }
-
-    .user-books-section {
-        overflow-x: auto;
-    }
-}
-
 .profile-card .btn-outline {
     background-color: #EDF2F6;
     margin-top: 45px;
@@ -1043,6 +1515,307 @@ input:focus {
     width: 100%;
     margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+
+    .account-page .user-books-section,
+    .account-page .user-books-section table,
+    .account-page .user-books-section tbody {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        display: block;
+        width: 100%;
+    }
+
+    .account-page .user-books-section tbody tr {
+        background-color: #fff;
+        display: grid;
+        width: 100%;
+        margin-bottom: 25px;
+        border: 1px solid #f0f0f0;
+        border-radius: 25px;
+        padding: 25px;
+        position: relative;
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        column-gap: 20px;
+        row-gap: 5px;
+    }
+
+    .account-page {
+        padding-top: 78px;
+    }
+
+    .account-info-wrapper {
+        flex-direction: column;
+    }
+
+    .profile-layout .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .profile-form-container .form-group {
+        width: 270px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-form-container .btn-wrap {
+        width: 270px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-form-container .btn-wrap .btn-outline {
+        width: 100%;
+    }
+
+    .profile-form-container input {
+        width: 100%;
+    }
+
+    .add-book-action .btn-outline {
+        width: 100%;
+        background-color: #00AC66;
+        color: white;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .user-books-section table,
+    .user-books-section tbody,
+    .user-books-section tr {
+        display: block;
+        width: 100%;
+    }
+
+    .user-books-section thead {
+        display: none;
+    }
+
+    .user-books-section {
+        overflow-x: visible;
+    }
+
+    .user-books-section table,
+    .user-books-section tbody {
+        display: block;
+        width: 100%;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .user-books-section td:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        padding: 0;
+        border: none;
+        width: auto;
+    }
+
+    .book-thumb {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .user-books-section td:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 0;
+        border: none;
+        align-self: end;
+        width: auto;
+    }
+
+    .book-title {
+        font-size: 18px;
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .user-books-section td:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 0;
+        border: none;
+        font-size: 14px;
+        color: #666;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .user-books-section td:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+        padding: 5px 0 0 0;
+        border: none;
+        align-self: start;
+        display: block !important;
+    }
+
+    .user-books-section td:nth-child(4) {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        padding: 20px 0 0 0;
+        border: none;
+        font-size: 14px;
+        color: #333;
+        font-style: italic;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .user-books-section td:nth-child(6) {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        padding: 25px 0 0 0;
+        border: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .action-link {
+        font-size: 16px;
+        text-decoration: underline;
+        font-family: 'Inter', sans-serif;
+        color: #333;
+    }
+
+    .action-link.delete {
+        color: #d9534f;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .public-view {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .public-view .profile-card {
+        width: 100%;
+        text-align: center;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .public-view .profile-card hr {
+        width: 50px;
+        margin: 20px auto;
+    }
+
+    .public-view .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        margin-top: 20px;
+        border: 1px solid #00AC66;
+        color: #00AC66;
+        font-weight: 600;
+        background: #EDF2F6;
+    }
+
+    .public-view .user-books-section table,
+    .public-view .user-books-section tbody {
+        display: block;
+        width: 100%;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .public-view .user-books-section thead {
+        display: none;
+    }
+
+    .public-view .user-books-section tbody tr {
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        border-radius: 25px;
+        padding: 25px;
+        margin-bottom: 25px;
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: min-content min-content auto;
+        column-gap: 20px;
+        row-gap: 2px;
+    }
+
+    .public-view .user-books-section td:first-child {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        padding: 0;
+        border: none;
+        width: auto;
+    }
+
+    .book-thumb {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .public-view .user-books-section td:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+        font-family: 'Inter', serif;
+        font-size: 14px;
+        color: rgba(41, 41, 41, 1);
+        font-weight: 400;
+    }
+
+    .public-view .user-books-section td:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 0;
+        border: none;
+        align-self: start;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: rgba(41, 41, 41, 1);
+        font-weight: 400;
+    }
+
+    .public-view .user-books-section td:nth-child(4) {
+        grid-column: 1 / -1;
+        grid-row: 3;
+
+        margin-top: 20px;
+        padding: 0;
+        border: none;
+
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #333;
+        font-style: italic;
+        line-height: 1.5;
+    }
+
+    .book-desc .desc-content {
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
+        color: rgba(41, 41, 41, 1);
+        font-size: 14px;
+    }
+}
+
 
 /* =========================================
    9. EDIT BOOK PAGE
@@ -1268,6 +2041,126 @@ input[type="file"] {
     display: none;
 }
 
+@media (max-width: 768px) {
+
+    .edit-book-page .container {
+        padding: 0;
+    }
+
+    .edit-book-page .back-link {
+        margin-bottom: 20px;
+    }
+
+    .edit-book-page h1.section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .edit-book-page .section-title,
+    .edit-book-page .back-link {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .edit-book-wrapper {
+        background: #fff;
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .edit-book-image-col {
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .edit-book-image-col p {
+        margin-bottom: 10px;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .current-book-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .edit-photo-link {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        text-decoration: underline;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .edit-book-form-col {
+        width: 100%;
+        padding: 0;
+    }
+
+    .edit-book-form-col .form-group {
+        margin-bottom: 20px;
+    }
+
+    .edit-book-form-col label {
+        display: block;
+        margin-bottom: 8px;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .form-control-light {
+        width: 100%;
+        background-color: #F0F2F5;
+        border: none;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+    textarea.form-control-light {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    select.form-control-light {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 16px;
+    }
+
+    /* 5. LE BOUTON VALIDER */
+    .edit-book-form-col .btn-primary {
+        width: 100%;
+        background-color: #00AC66;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: 600;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
+/* =========================================
+   9. MESAGES
+   ========================================= */
+
 main.messagerie-page {
     flex-direction: row;
 }
@@ -1392,6 +2285,10 @@ main.messagerie-page {
     object-fit: cover;
 }
 
+.back-btn-mobile {
+    display: none;
+}
+
 .chat-username {
     font-weight: 700;
     font-size: 14px;
@@ -1404,6 +2301,14 @@ main.messagerie-page {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.msg-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
 .message-row {
@@ -1429,6 +2334,8 @@ main.messagerie-page {
 
 .message-row.sent {
     align-self: flex-end;
+    align-items: flex-end;
+    max-width: 70%;
 }
 
 .message-row.sent .message-bubble {
@@ -1438,8 +2345,9 @@ main.messagerie-page {
 }
 
 .message-row.sent .message-meta {
-    text-align: right;
-    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
 }
 
 .message-bubble {
@@ -1449,8 +2357,11 @@ main.messagerie-page {
 }
 
 .message-meta {
-    font-size: 10px;
-    color: #AAA;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #999;
 }
 
 .chat-form {
@@ -1494,4 +2405,223 @@ main.messagerie-page {
     opacity: 0.1;
     width: 100px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .messagerie-page .messagerie-container {
+        display: block;
+        height: auto;
+        padding: 0;
+    }
+
+    .messagerie-page .messagerie-content {
+        display: none;
+    }
+
+    .messagerie-page .messagerie-sidebar {
+        display: block;
+        width: 100%;
+        border-right: none;
+        padding: 20px;
+        min-height: calc(100vh - 60px);
+        background-color: #FAF9F7;
+    }
+
+    .messagerie-page.open-chat .messagerie-sidebar {
+        display: none;
+    }
+
+    .messagerie-page.open-chat .messagerie-content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 80px);
+    }
+
+    .messagerie-sidebar .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        margin-bottom: 25px;
+        padding-left: 0;
+    }
+
+    .message-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+        color: #999;
+        font-size: 11px;
+    }
+
+    .msg-avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: #ddd;
+    }
+
+    .conv-item {
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #FFF;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .conv-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    .conv-info {
+        flex: 1;
+    }
+
+    .conv-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .conv-username {
+        font-weight: 600;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .conv-time {
+        font-size: 14px;
+        color: #333;
+        font-family: 'Inter', sans serif;
+    }
+
+    .conv-preview {
+        font-size: 14px;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+        margin: 0;
+    }
+
+    .chat-header {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px;
+        background: #FAF9F7;
+        border-bottom: none;
+    }
+
+    .back-btn-mobile {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        color: #999;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .chat-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .chat-username {
+        font-weight: 700;
+        color: #333;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #FAF9F7;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .message-row {
+        display: flex;
+        flex-direction: column;
+        max-width: 260px;
+    }
+
+    .message-row.received {
+        align-self: flex-start;
+    }
+
+    .message-row.received .message-bubble {
+        background-color: #FFF;
+        color: #333;
+        border-radius: 3px;
+    }
+
+    .message-row.received .message-meta {
+        align-self: flex-start;
+        margin-bottom: 5px;
+    }
+
+    .message-row.sent {
+        align-self: flex-end;
+    }
+
+    .message-row.sent .message-bubble {
+        background-color: #EDF2F6;
+        color: #333;
+        border-radius: 3px;
+    }
+
+    .message-row.sent .message-meta {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+
+    .message-bubble {
+        padding: 12px 16px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .message-meta {
+        font-size: 11px;
+        color: #999;
+    }
+
+    .chat-form {
+        padding: 15px;
+        background: #FAF9F7;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chat-form input {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 12px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .chat-form button {
+        width: 100%;
+        background-color: #00AC66;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 16px;
+    }
 }

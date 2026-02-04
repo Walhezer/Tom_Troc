@@ -6,7 +6,7 @@ require_once 'partials/header.php';
 <main class="account-page">
     <div class="container">
 
-        <div class="profile-layout">
+        <div class="profile-layout public-view">
             <div class="profile-card">
                 <div class="profile-avatar">
                     <img src="<?= $user['avatar_url'] ?>" alt="Avatar">
