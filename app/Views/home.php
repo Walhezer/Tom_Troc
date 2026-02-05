@@ -9,7 +9,7 @@ require_once "partials/header.php";
             <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons
                 en
                 la magie du partage de connaissances et d'histoires à travers les livres.</p>
-            <a class="btn-primary" href="#">Découvrir</a>
+            <a class="btn-primary" href="index.php?action=catalog">Découvrir</a>
         </div>
 
         <div class="hero-image">
