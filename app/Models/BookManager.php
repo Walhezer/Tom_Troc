@@ -27,6 +27,7 @@ class BookManager
         $sql = 'SELECT books.*, users.username, users.id AS user_id 
             FROM books 
             JOIN users ON books.user_id = users.id 
+            WHERE books.available = 1
             ORDER BY books.id DESC';
         $req = $this->db->query($sql);
         return $req->fetchAll();
