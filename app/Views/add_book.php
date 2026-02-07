@@ -12,7 +12,7 @@ require_once 'partials/header.php';
 
         <h1 class="section-title text-left">Ajouter un livre</h1>
 
-        <form action="" method="post" enctype="multipart/form-data" class="book-form">
+        <form action="index.php?action=add_book" method="post" enctype="multipart/form-data" class="book-form">
 
             <div class="edit-book-wrapper">
 

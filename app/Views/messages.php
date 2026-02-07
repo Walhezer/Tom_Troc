@@ -7,7 +7,7 @@ require_once 'partials/header.php';
     <div class="messagerie-container">
 
         <div class="messagerie-sidebar">
-            <h2 class="section-title">Messagerie </h2>
+            <h1 class="section-title">Messagerie </h1>
             <div class="conversations-list">
                 <?php if (empty($conversations)): ?>
                     <p class="no-conv">Vous n'avez pas encore de message.</p>
@@ -75,9 +75,11 @@ require_once 'partials/header.php';
                     <?php endforeach; ?>
                 </div>
 
-                <form action="" method="POST" class="chat-form">
+                <form action="index.php?action=messages&id=<?= htmlspecialchars($_GET['id']) ?>" method="POST"
+                    class="chat-form">
                     <input type="hidden" name="receiver_id" value="<?= $selectedUser['id'] ?>">
-                    <input type="text" name="content" placeholder="Tapez votre message ici" required autocomplete="off">
+                    <input type="text" name="content" placeholder="Tapez votre message ici" aria-label="Écrire un message"
+                        required autocomplete="off">
                     <button type="submit" class="btn-primary">Envoyer</button>
                 </form>
 

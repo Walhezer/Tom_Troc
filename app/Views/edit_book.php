@@ -17,8 +17,7 @@ require_once 'partials/header.php';
                 <div class="edit-book-image-col">
                     <p>Photo</p>
                     <div class="current-book-image">
-                        <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>"
-                            alt="Couverture actuelle">
+                        <img src="public/uploads/livres/<?= rawurlencode($book['image']) ?>" alt="Couverture actuelle">
                     </div>
                     <label for="imageUpload" class="edit-photo-link">Modifier la photo</label>
                     <input type="file" id="imageUpload" name="image" style="display: none;"

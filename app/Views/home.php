@@ -24,20 +24,25 @@ require_once "partials/header.php";
             <?php foreach ($book as $b): ?>
                 <div class="book-card">
                     <a href="index.php?action=show_book&id=<?= $b['id'] ?>">
-                        <img src="public/uploads/livres/<?= $b['image'] ?>" alt="Couverture de <?= $b['title'] ?>">
-                        <div class="book-infos">
-                            <h3><?= $b['title'] ?></h3>
-                            <p><?= $b['author'] ?></p>
-                            <?php if (isset($b['username'])): ?>
-                                <p class="book-owner">
-                                    Vendu par :
-                                    <a href="index.php?action=public_profile&id=<?= $b['user_id'] ?>">
-                                        <?= $b['username'] ?>
-                                    </a>
-                                </p>
-                            <?php endif; ?>
-                        </div>
+                        <img src="public/uploads/livres/<?= rawurlencode($b['image']) ?>"
+                            alt="Couverture de <?= $b['title'] ?>">
                     </a>
+                    <div class="book-infos">
+                        <a href="index.php?action=show_book&id=<?= $b['id'] ?>">
+                            <h3><?= $b['title'] ?></h3>
+                        </a>
+
+                        <p><?= $b['author'] ?></p>
+
+                        <?php if (isset($b['username'])): ?>
+                            <p class="book-owner">
+                                Vendu par :
+                                <a href="index.php?action=public_profile&id=<?= $b['user_id'] ?>">
+                                    <?= $b['username'] ?>
+                                </a>
+                            </p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -99,5 +104,5 @@ require_once "partials/header.php";
             </div>
         </div>
     </section>
-    <?php require_once 'partials/footer.php'; ?>
 </main>
+<?php require_once 'partials/footer.php'; ?>

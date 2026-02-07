@@ -70,7 +70,7 @@ require_once 'partials/header.php';
                         <?php foreach ($books as $book): ?>
                             <tr>
                                 <td>
-                                    <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>" alt="Livre"
+                                    <img src="public/uploads/livres/<?= rawurlencode($book['image']) ?>" alt="Livre"
                                         class="book-thumb">
                                 </td>
                                 <td class="book-title"><?= htmlspecialchars($book['title']) ?></td>

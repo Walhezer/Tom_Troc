@@ -9,10 +9,9 @@ require_once 'partials/header.php';
             <div class="catalogue-header">
                 <h1 class="section-title">Nos livres à l'échange</h1>
 
-                <form action="" method="GET" class="search-form">
+                <form action="index.php?action=catalog" method="GET" class="search-form">
                     <i class="fas fa-search"></i>
-                    <input type="text" name="search" placeholder="Rechercher un livre">
-                </form>
+                    <input type="text" name="search" placeholder="Rechercher un livre" aria-label="Rechercher un livre">
             </div>
             <div class="books-grid">
                 <?php
@@ -22,13 +21,13 @@ require_once 'partials/header.php';
                         <article class="book-card">
                             <div class="book-image-container">
                                 <a href="index.php?action=show_book&id=<?= $book['id'] ?>">
-                                    <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>"
+                                    <img src="public/uploads/livres/<?= rawurlencode($book['image']) ?>"
                                         alt="Couverture de <?= htmlspecialchars($book['title']) ?>">
                                 </a>
                             </div>
 
                             <div class="book-infos">
-                                <h3><?= htmlspecialchars($book['title']) ?></h3>
+                                <h2><?= htmlspecialchars($book['title']) ?></h2>
                                 <p class="book-author"><?= htmlspecialchars($book['author']) ?></p>
                                 <p class="book-owner">Vendu par : <a
                                         href="index.php?action=public_profile&id=<?= $book['user_id'] ?>">

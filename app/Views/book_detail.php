@@ -13,7 +13,7 @@ require_once 'partials/header.php';
 
         <div class="book-detail-wrapper">
             <div class="book-cover">
-                <img src="public/uploads/livres/<?= htmlspecialchars($book['image']) ?>"
+                <img src="public/uploads/livres/<?= rawurlencode($book['image']) ?>"
                     alt="Couverture de <?= htmlspecialchars($book['title']) ?>">
             </div>
 
@@ -24,14 +24,14 @@ require_once 'partials/header.php';
                 <div class="separator-line"></div>
 
                 <div class="detail-section">
-                    <h3>DESCRIPTION</h3>
+                    <h2>DESCRIPTION</h2>
                     <p class="description-text">
                         <?= nl2br(htmlspecialchars($book['description'] ?? 'Aucune description fournie.')) ?>
                     </p>
                 </div>
 
                 <div class="detail-section">
-                    <h3>PROPRIÉTAIRE</h3>
+                    <h2>PROPRIÉTAIRE</h2>
                     <div class="owner-card">
                         <div class="owner-avatar">
                             <img src="<?= $owner['avatar_url'] ?>" alt="<?= htmlspecialchars($owner['username']) ?>">

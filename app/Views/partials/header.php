@@ -48,5 +48,6 @@
                             class="link-with-icon <?= (isset($_GET['action']) && $_GET['action'] == 'login') ? 'active' : '' ?>">Connexion</a>
                     </div>
                 </div>
+            </div>
         </nav>
     </header>

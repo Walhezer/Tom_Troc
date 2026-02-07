@@ -389,7 +389,7 @@ input:focus {
 
 .btn-primary {
     padding: 22px 38px;
-    background-color: #00AC66;
+    background-color: #007a4d;
     color: white;
     border: none;
     border-radius: 10px;
@@ -402,7 +402,7 @@ input:focus {
 }
 
 .btn-primary:hover {
-    background-color: #008f53;
+    background-color: #007a4d;
 }
 
 .auth-link {
@@ -488,7 +488,7 @@ input:focus {
     display: block;
     text-align: right;
     font-size: 12px;
-    color: #A6A6A6;
+    color: #555555;
     margin-top: 8px;
     font-style: italic;
     margin-right: 5px;
@@ -582,8 +582,8 @@ input:focus {
     margin: 0;
     width: fit-content;
     background-color: transparent;
-    color: #00AC66;
-    border: 1px solid #00AC66;
+    color: #007a4d;
+    border: 1px solid #007a4d;
     padding: 22px 38px;
     border-radius: 10px;
     font-size: 1.1rem;
@@ -643,7 +643,7 @@ input:focus {
 }
 
 .signature-block cite {
-    color: #999;
+    color: #555555;
     font-style: italic;
     font-size: 12px;
     font-family: 'Inter', sans-serif;
@@ -901,27 +901,36 @@ input:focus {
     margin: 0 0 5px 0;
 }
 
+.book-infos h2 {
+    font-family: 'inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
 .home-page .book-card .book-author {
     font-size: 14px;
-    color: #A6A6A6;
+    color: #555555;
 }
 
 .home-page .book-card .book-owner {
     font-size: 10px;
     font-style: italic;
-    color: #999999;
+    color: #555555;
     margin: 18px 0 0 0;
 }
 
 .catalog-page .book-card .book-author {
     font-size: 14px;
-    color: #A6A6A6;
+    color: #555555;
 }
 
 .catalog-page .book-card .book-owner {
     font-size: 10px;
     font-style: italic;
-    color: #999999;
+    color: #555555;
     margin: 18px 0 0 0;
 }
 
@@ -1115,6 +1124,17 @@ input:focus {
     letter-spacing: 1px;
     margin-bottom: 20px;
     color: #333;
+}
+
+.detail-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
 }
 
 .description-text {
@@ -1337,7 +1357,7 @@ input:focus {
 
 .member-since {
     font-family: 'Inter', sans-serif;
-    color: rgba(166, 166, 166, 1);
+    color: #555555;
     font-size: 14px;
     margin-bottom: 21px;
     text-align: center;
@@ -1477,12 +1497,12 @@ input:focus {
 }
 
 .badge-available {
-    background-color: #00AC66;
+    background-color: #007a4d;
     color: white;
 }
 
 .badge-unavailable {
-    background-color: #d9534f;
+    background-color: #c62828;
     color: white;
 }
 
@@ -1495,7 +1515,7 @@ input:focus {
 }
 
 .action-link.delete {
-    color: #d9534f;
+    color: #c62828;
 }
 
 .empty-table-message {
@@ -1582,7 +1602,7 @@ input:focus {
 
     .add-book-action .btn-outline {
         width: 100%;
-        background-color: #00AC66;
+        background-color: #007a4d;
         color: white;
         border: none;
         margin-top: 20px;
@@ -1724,8 +1744,8 @@ input:focus {
         width: 100%;
         max-width: 280px;
         margin-top: 20px;
-        border: 1px solid #00AC66;
-        color: #00AC66;
+        border: 1px solid #007a4d;
+        color: #007a4d;
         font-weight: 600;
         background: #EDF2F6;
     }
@@ -1833,7 +1853,7 @@ input:focus {
 .edit-book-page .back-link a {
     margin-top: 40px;
     text-decoration: none;
-    color: rgba(166, 166, 166, 1);
+    color: #555555;
     font-weight: 400;
     font-size: 14px;
 }
@@ -1864,7 +1884,7 @@ input:focus {
     font-weight: 400;
     font-size: 14px;
     font-style: regular;
-    color: rgba(166, 166, 166, 1);
+    color: #555555;
     margin-bottom: 10px;
 }
 
@@ -1902,7 +1922,7 @@ input:focus {
 }
 
 .edit-book-form-col label {
-    color: rgba(166, 166, 166, 1);
+    color: #555555;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -2115,7 +2135,7 @@ input[type="file"] {
     .edit-book-form-col label {
         display: block;
         margin-bottom: 8px;
-        color: #999;
+        color: #555555;
         font-size: 14px;
     }
 
@@ -2146,7 +2166,7 @@ input[type="file"] {
     /* 5. LE BOUTON VALIDER */
     .edit-book-form-col .btn-primary {
         width: 100%;
-        background-color: #00AC66;
+        background-color: #007a4d;
         color: white;
         border: none;
         padding: 15px;
@@ -2187,6 +2207,13 @@ main.messagerie-page {
     border-right: 1px solid #F0F0F0;
     display: flex;
     flex-direction: column;
+}
+
+.messagerie-sidebar h1 {
+    font-size: 20px;
+    padding: 25px;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
 }
 
 .messagerie-sidebar h2 {
@@ -2252,12 +2279,12 @@ main.messagerie-page {
 
 .conv-time {
     font-size: 11px;
-    color: #999;
+    color: #555555;
 }
 
 .conv-preview {
     font-size: 12px;
-    color: #999;
+    color: #555555;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2361,7 +2388,7 @@ main.messagerie-page {
     align-items: center;
     margin-bottom: 5px;
     font-size: 12px;
-    color: #999;
+    color: #555555;
 }
 
 .chat-form {
@@ -2397,7 +2424,7 @@ main.messagerie-page {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: #555555;
     text-align: center;
 }
 
@@ -2450,7 +2477,7 @@ main.messagerie-page {
         align-items: center;
         gap: 8px;
         margin-bottom: 6px;
-        color: #999;
+        color: #555555;
         font-size: 11px;
     }
 
@@ -2503,7 +2530,7 @@ main.messagerie-page {
 
     .conv-preview {
         font-size: 14px;
-        color: #666;
+        color: #555555;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -2594,7 +2621,7 @@ main.messagerie-page {
 
     .message-meta {
         font-size: 11px;
-        color: #999;
+        color: #767676;
     }
 
     .chat-form {
