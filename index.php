@@ -65,6 +65,11 @@ switch ($action) {
                 $controller->messagerie();
                 break;
 
+        case 'delete_book':
+                $controller = new BookController();
+                $controller->deleteBook();
+                break;
+
         default:
                 $controller = new HomeController();
                 $controller->pageNotFound();

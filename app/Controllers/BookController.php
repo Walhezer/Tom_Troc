@@ -59,10 +59,10 @@ class BookController
 
         // Handle form submission
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $title = htmlspecialchars(trim($_POST['title']));
-            $author = htmlspecialchars(trim($_POST['author']));
-            $description = htmlspecialchars(trim($_POST['description']));
-            $available = isset($_POST['available']) ? 1 : 0;
+            $title = trim($_POST['title']);
+            $author = trim($_POST['author']);
+            $description = trim($_POST['description']);
+            $available = (int) $_POST['available'];
 
             // Image management
             $imageName = $book['image'];
@@ -101,9 +101,9 @@ class BookController
         }
         //Handle form submission
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $title = htmlspecialchars(trim($_POST['title']));
-            $author = htmlspecialchars(trim($_POST['author']));
-            $description = htmlspecialchars(trim($_POST['description']));
+            $title = trim($_POST['title']);
+            $author = trim($_POST['author']);
+            $description = trim($_POST['description']);
             $userId = $_SESSION['user_id'];
             $imageName = 'default-book.jpg';
 
@@ -126,12 +126,32 @@ class BookController
             }
             //Add the book to the database
             $bookManager = new BookManager();
-            if ($bookManager->addBook($title, $author, $description, $imageName, $userId)) {
+            if ($bookManager->addBook($title, $author, $description, $imageName, 1, $userId)) {
                 header('Location: index.php?action=account&success=book_added');
                 exit;
             }
         }
 
         require_once 'app/Views/add_book.php';
+    }
+
+    public function deleteBook()
+    {
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: index.php?action=login');
+            exit;
+        }
+
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $id = (int) $_GET['id'];
+            $bookManager = new BookManager();
+            $book = $bookManager->getBookById($id);
+
+            if ($book && $book['user_id'] == $_SESSION['user_id']) {
+                $bookManager->deleteBook($id);
+            }
+        }
+        header('Location: index.php?action=account&success=book_deleted');
+        exit;
     }
 }

@@ -70,9 +70,9 @@ class BookManager
     }
 
     //Add a book
-    public function addBook($title, $author, $description, $image, $available)
+    public function addBook($title, $author, $description, $image, $available, $userId)
     {
-        $sql = 'INSERT INTO books (title, author, description, image, user_id, available) VALUES (:title, :author, :description, :image, :user_id, 1)';
+        $sql = 'INSERT INTO books (title, author, description, image, user_id, available) VALUES (:title, :author, :description, :image, :user_id, :available)';
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
         $stmt->bindParam(':author', $author, PDO::PARAM_STR);
@@ -82,5 +82,13 @@ class BookManager
         $stmt->bindParam(':available', $available, PDO::PARAM_BOOL);
         return $stmt->execute();
     }
-}
 
+    //Delete a book
+    public function deleteBook($id)
+    {
+        $sql = 'DELETE FROM books WHERE id = :id';
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+}
